@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/newOrdersFragment"
+        android:icon="@drawable/order_new"
+        android:title="@string/nowe_zam_wienia"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/oldOrdersFragment"
+        android:icon="@drawable/order_old"
+        android:title="@string/stare_zam_wienia"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/productsFragment"
+        android:icon="@drawable/pizza_icon_2"
+        android:title="@string/produkty"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/orderTimeFragment"
+        android:icon="@drawable/time_icon"
+        android:title="@string/czas_oczekiwania"
+        app:showAsAction="always" />
+</menu>

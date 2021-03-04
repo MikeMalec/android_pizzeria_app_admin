@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph">
+
+    <fragment
+        android:id="@+id/newOrdersFragment"
+        android:name="com.example.pizzeria_admin_app.ui.neworders.NewOrdersFragment"
+        android:label="Nowe zamówienia">
+        <action
+            android:id="@+id/action_newOrdersFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oldOrdersFragment"
+        android:name="com.example.pizzeria_admin_app.ui.oldorders.OldOrdersFragment"
+        android:label="Stare zamówienia">
+        <action
+            android:id="@+id/action_oldOrdersFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.ProductsFragment"
+        android:label="Produkty">
+        <action
+            android:id="@+id/action_productsFragment_to_pizzaFragment"
+            app:destination="@id/pizzaFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_burgerFragment"
+            app:destination="@id/burgerFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_pitaFragment"
+            app:destination="@id/pitaFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_pastaFragment"
+            app:destination="@id/pastaFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_saladFragment"
+            app:destination="@id/saladFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_beverageFragment"
+            app:destination="@id/beverageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.pizzeria_admin_app.ui.order.OrderFragment"
+        android:label="Zamówienie">
+        <argument
+            android:name="order"
+            app:argType="com.example.pizzeria_admin_app.data.remote.order.api.models.Order" />
+    </fragment>
+    <dialog
+        android:id="@+id/noInternetDialog"
+        android:name="com.example.pizzeria_admin_app.ui.internet.NoInternetDialog"
+        android:label="NoInternetDialog" />
+    <fragment
+        android:id="@+id/pizzaFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.pizza.PizzaFragment"
+        android:label="Pizze">
+        <action
+            android:id="@+id/action_pizzaFragment_to_pizzaUpdateCreateFragment"
+            app:destination="@id/pizzaUpdateCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizzaUpdateCreateFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.pizza.PizzaUpdateCreateFragment"
+        android:label="Dodaj/Zmień pizze">
+        <argument
+            android:name="pizza"
+            app:argType="com.example.pizzeria_admin_app.data.remote.product.api.models.Pizza"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_pizzaUpdateCreateFragment_to_pizzaIngredientDialog"
+            app:destination="@id/pizzaIngredientDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/pizzaIngredientDialog"
+        android:name="com.example.pizzeria_admin_app.ui.products.pizza.IngredientDialog"
+        android:label="PizzaIngredientDialog">
+        <argument
+            android:name="foodType"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/burgerFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.burger.BurgerFragment"
+        android:label="BurgerFragment">
+        <action
+            android:id="@+id/action_burgerFragment_to_burgerUpdateCreateFragment"
+            app:destination="@id/burgerUpdateCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/burgerUpdateCreateFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.burger.BurgerUpdateCreateFragment"
+        android:label="BurgerUpdateCreateFragment">
+        <argument
+            android:name="burger"
+            app:argType="com.example.pizzeria_admin_app.data.remote.product.api.models.Burger"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_burgerUpdateCreateFragment_to_pizzaIngredientDialog"
+            app:destination="@id/pizzaIngredientDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/pitaFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.pita.PitaFragment"
+        android:label="Pity">
+        <action
+            android:id="@+id/action_pitaFragment_to_pitaUpdateCreateFragment"
+            app:destination="@id/pitaUpdateCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pitaUpdateCreateFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.pita.PitaUpdateCreateFragment"
+        android:label="Dodaj/zmień pite">
+        <argument
+            android:name="pita"
+            app:argType="com.example.pizzeria_admin_app.data.remote.product.api.models.Pita"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_pitaUpdateCreateFragment_to_pizzaIngredientDialog"
+            app:destination="@id/pizzaIngredientDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/pastaFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.pasta.PastaFragment"
+        android:label="PastaFragment">
+        <action
+            android:id="@+id/action_pastaFragment_to_pastaUpdateCreateFragment"
+            app:destination="@id/pastaUpdateCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pastaUpdateCreateFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.pasta.PastaUpdateCreateFragment"
+        android:label="PastaUpdateCreateFragment">
+        <argument
+            android:name="pasta"
+            app:argType="com.example.pizzeria_admin_app.data.remote.product.api.models.Pasta"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_pastaUpdateCreateFragment_to_pizzaIngredientDialog"
+            app:destination="@id/pizzaIngredientDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/saladFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.salad.SaladFragment"
+        android:label="Sałatki">
+        <action
+            android:id="@+id/action_saladFragment_to_createUpdateSaladFragment"
+            app:destination="@id/createUpdateSaladFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createUpdateSaladFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.salad.CreateUpdateSaladFragment"
+        android:label="Dodaj/zmień sałatke">
+        <action
+            android:id="@+id/action_createUpdateSaladFragment_to_pizzaIngredientDialog"
+            app:destination="@id/pizzaIngredientDialog" />
+        <argument
+            android:name="salad"
+            app:argType="com.example.pizzeria_admin_app.data.remote.product.api.models.Salad"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderTimeFragment"
+        android:name="com.example.pizzeria_admin_app.ui.time.OrderTimeFragment"
+        android:label="Czas oczekiwania na zamówienie" />
+    <fragment
+        android:id="@+id/beverageFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.beverage.BeverageFragment"
+        android:label="BeverageFragment">
+        <action
+            android:id="@+id/action_beverageFragment_to_createUpdateBeverageFragment"
+            app:destination="@id/createUpdateBeverageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createUpdateBeverageFragment"
+        android:name="com.example.pizzeria_admin_app.ui.products.beverage.CreateUpdateBeverageFragment"
+        android:label="CreateUpdateBeverageFragment">
+        <argument
+            android:name="beverage"
+            app:argType="com.example.pizzeria_admin_app.data.remote.product.api.models.Beverage"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.pizzeria_admin_app.ui.auth.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_newOrdersFragment"
+            app:destination="@id/newOrdersFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">pizzeria_admin_app</string>
+    <string name="nowe_zam_wienia">Nowe Zamówienia</string>
+    <string name="stare_zam_wienia">Stare zamówienia</string>
+    <string name="produkty">Produkty</string>
+    <string name="szukaj">Szukaj</string>
+    <string name="usu">Usuń</string>
+    <string name="czas_oczekiwania">Czas Oczekiwania</string>
+</resources>
